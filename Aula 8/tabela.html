@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var matriz = [];
+
+        function cadastrar(){
+            var nome = document.getElementById("nome").value;
+            var idade = document.getElementById("idade").value;
+            var email = document.getElementById("email").value;
+
+            matriz.push( [nome, idade, email ]);
+
+            var info = "";
+
+            info += "<tr>";
+            info += "<td>Nome</td>";
+            info += "<td>Idade</td>";
+            info += "<td>E-mail</td>";
+            info += "</tr>";
+
+            for (var i=0; i < matriz.length; i++){
+                info += "<tr>";
+                info += "<td>" + matriz[i][0] + "</td>";
+                info += "<td>" + matriz[i][1] + "</td>";
+                info += "<td>" + matriz[i][2] + "</td>";
+                info += "</tr>";
+            }
+
+            document.getElementById("tabela").innerHTML = info;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="nome" placeholder="Nome" />
+
+        <input type="number" id="idade" placeholder="Idade" />
+
+        <input type="email" id="email" placeholder="E-mail" />
+
+        <input type="button" value="Cadastrar" onclick="cadastrar()" />
+    </form>
+    <table id="tabela" border="3">
+        <tr>
+            <td>Nome</td>
+            <td>Idade</td>
+            <td>E-mail</td>
+        </tr>
+    </table>
+</body>
+</html>

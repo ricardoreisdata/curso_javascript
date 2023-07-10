@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var banco = [];
+
+        function cadastrar(){
+            var pessoa = {};
+            pessoa["nome"] = document.getElementById("nome").value;
+            pessoa["email"] = document.getElementById("email").value;
+            pessoa["dataAdmissao"] = document.getElementById("dataAdmissao").value;
+            pessoa["salario"] = Number(document.getElementById("salario").value);
+        
+            banco.push(pessoa);
+
+            alert(pessoa.nome + " foi cadastrado(a)");
+            listar();
+            limpar();
+        }
+
+        function limpar(){
+            var elementos = document.getElementsByTagName("input");
+        
+            for (var i=0; i < 4; i++){
+                elementos[i].value = "";    
+            }
+        }
+
+        function listar(){
+            var saida = "<tr>"
+            saida += "<td>Nome</td>"
+            saida += "<td>E-mail</td>"
+            saida += "<td>Data de Admissão</td>";
+            saida += "<td>Salário</td>";
+            saida += "<td>Ações</td>";
+            saida += "</tr>";
+
+            for(var i=0; i < banco.length; i++) {
+                
+                saida += "<tr>"
+                saida += "<td>" + banco[i].nome + "</td>"; 
+                saida += "<td>" + banco[i].email + "</td>";
+                saida += "<td>" + formatarData(banco[i].dataAdmissao) + "</td>";
+                saida += "<td>" + formatarSalario(banco[i].salario) + "</td>";
+                saida += colunaAcoes(i); 
+                saida += "</tr>" 
+
+                console.log(banco[i]);
+            }
+
+            document.getElementById("tabela").innerHTML = saida;
+        }
+
+        function colunaAcoes(posicao){
+            var coluna = "<td>";
+            coluna += "<input type='button' value='Editar'";
+            coluna += " onclick='editar('" + posicao + "') />";
+            
+            coluna += "<input type='button' value='Excluir'";
+            coluna += " onclick='excluir('" + posicao + "') />";
+
+            coluna += "</td>"; 
+            return coluna;   
+        }
+        function formatarData(adm){
+            var admissao = adm.split("-");
+
+            return admissao[2] + "/" + admissao[1] + "/" + admissao[0];
+        }
+
+        function formatarSalario(sal) {
+            var s = sal.toFixed(2);
+
+            return s.replace(".", ",");
+        }
+
+    </script>
+</head>
+<body onload="limpar()">
+    <form>
+        <input type="text" id="nome" placeholder="Nome" />
+        <input type="email" id="email" placeholder="E-mail" />
+        <input type="date" id="dataAdmissao" 
+                placeholder="Data de admissão" />
+        <input type="number" id="salario" placeholder="salario" 
+               step=".01" />
+        
+        <input type="button" value="Cadastrar" 
+                onclick="cadastrar()" />
+    </form>
+
+    <table id="tabela">
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Modo simplificado
+        var produtos = []; 
+
+        //Estilo Orientado a Objetos
+        //var produtos = new Array(); 
+
+        //Criação e inicialização ao mesmo tempo
+        //var produtos = ["Arroz", "Feijão", "Macarrão"];
+        
+        //Atribuindo valor a primeira posição, ou seja, posição "0"
+        produtos[0] = "Sal";
+
+        
+        //alert(produtos);
+
+        //Atribuindo valor a posição "1"
+        produtos[1] = "Açúcar";
+        //alert(produtos);
+
+
+        produtos[5] = "Biscoito";
+        //alert(produtos);
+
+        //Adiciona elemento no final do vetor
+        produtos.push("Farinha");
+        //alert(produtos);
+
+        //Adiciona elemento no início do vetor
+        produtos.unshift("Arroz");
+        //alert(produtos);
+
+        //Exclui último elemento
+        produtos.pop();
+        //alert(produtos);
+
+        //Exclui primeiro elemento
+        produtos.shift();
+        //alert(produtos);
+
+        //Eliminando a partir de uma busca
+        var posicao = produtos.indexOf("Açúcar");
+
+        alert(posicao);
+        if (posicao > -1){
+            produtos.splice(posicao, 1);
+        }
+        //Aqui terminou a exclusão
+        alert(produtos);
+        console.log(produtos);
+        document.write(produtos);
+
+        document.write("<br/>");
+        alert(produtos.length);
+
+        for(var contador = 0; contador < produtos.length; contador++){
+            document.write("<p>" + produtos[contador]  + "</p>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

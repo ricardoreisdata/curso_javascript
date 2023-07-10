@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira página com formulário</title>
+    <script>
+        function saudacao(nome){
+            alert("Olá," + nome);
+
+        }
+
+        function novaSaudacao(){
+            //var nome = document.getElementsByName("pessoa")[0].value;
+            var nome = document.getElementById("pessoa").value;
+            
+            alert(nome);
+
+        }
+    </script>
+</head>
+<body>
+    <form name="form1">
+        <input type="text" name="pessoa" id="pessoa" />
+
+
+        <input type="number" name="idade" />
+
+        <input type="button" value="Clique Aqui"
+           onclick="saudacao(document.form1.pessoa.value)" />
+
+        <input type="button" value="Veja a mensagem"
+           onclick="novaSaudacao()" />   
+    </form>    
+</body>
+</html>

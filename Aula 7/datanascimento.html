@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script>
+        function verificaIdade(){
+            var idade = calculeIdade(
+                document.getElementById("dataNascimento").value);
+
+            preencherResposta(idade);    
+        }
+
+        function calculeIdade(nascimento){
+            var hoje = new Date();
+            
+            var data = nascimento.split("-");
+            var anoAtual = hoje.getYear() + 1900;
+            var anoNascimento = Number(data[0]);
+
+            return anoAtual - anoNascimento;
+        }
+
+        function preencherResposta(n){
+            if (n < 18){
+                document.getElementById("resposta").textContent = "Menor";
+            } else {
+                document.getElementById("resposta").textContent = "Maior";
+            }
+        }
+    </script>
+<body>
+    <form>
+        <input type="date" id="dataNascimento" />
+
+        <input type="button" value="Veja sua faixa etária" 
+                onclick="verificaIdade()"/>
+
+        <p id="resposta"></p>
+    </form>
+</body>
+</html>

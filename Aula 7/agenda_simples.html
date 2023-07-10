@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var nomes = [];
+
+        function cadastrar(){
+            var pessoa = document.getElementById("nome").value;
+
+            //O comando trim() retira os espaços vazios ao final do campo
+            if (pessoa.trim() != ""){
+                nomes.push(pessoa);
+            } else {
+                alert("Campo \'Nome\' é obrigatório");
+                console.log("Antes de chamar");
+                focar("nome");
+            }
+
+            document.getElementById("nome").value = "";
+            focar("nome");
+            listar();
+        }
+    
+        function listar(){
+            var saida = "";
+            for(var contador=0; contador < nomes.length; contador++){
+                saida = saida + nomes[contador] + "</br>";
+            }   
+            document.getElementById("tabela").innerHTML = saida;
+
+        }
+
+        function focar(campo){
+            console.log(campo);
+            document.getElementById(campo).focus();
+        }
+    </script>
+</head>
+<body>
+    <form> 
+        <input type="text" id="nome" placeholder="Nome" />
+
+        <input type="button" value="Cadastrar" onclick="cadastrar()" />
+    </form>    
+
+    <div id="tabela"></div>
+</body>
+</html>

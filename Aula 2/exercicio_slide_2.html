@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria</title>
+    <script>
+        //Ler o valor total da conta
+        var valorTotal = Number(prompt("Informe o valor total da conta"));
+        
+        //Ler o valor de pagantes
+        var numeroPagantes = Number(prompt("Informe o total de pagantes"));
+        
+        //Dividir o valor total da conta pelo valor de pagantes
+        var valorPorCliente = valorTotal / numeroPagantes;
+
+        //Exibir o divisão
+        alert("O valor por pessoa é: " + valorPorCliente.toFixed(2));
+        // A função toFixed coloca as casas decimais
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var resposta = "S";
+        
+        var soma = 0;
+        var quantidade = 0;
+        //while (resposta.toLowerCase() == "s") {
+        while (resposta == "s" || resposta == "S") {
+            var nome = prompt("Informe o seu nome");
+            var idade = Number(prompt("Informe a sua idade"));
+
+            resposta = prompt("Deseja continuar? (s/n)");
+            if (resposta.toLowerCase() != "s" 
+                && resposta.toLowerCase() != "n"){
+                alert("Opção inválida");
+                resposta = "s";
+                continue;
+            }
+            soma = soma + idade;
+            quantidade = quantidade + 1;
+
+        }
+
+        var media = soma / quantidade;
+        alert("A média das idades é: " + media + 
+              "\nQuantidade de pessoas: " + quantidade +
+              "\nSoma das idades: " + soma);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

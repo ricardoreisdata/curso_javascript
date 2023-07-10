@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var numeros = [1, 4, 100, 20, 8, 2, 10];
+
+        document.write(numeros);
+        
+        numeros.sort(ordena);
+
+        document.write("<br/>");
+        document.write(numeros);
+
+        function ordena(a,b){
+            if (a == b) 
+                return 0; 
+            if (a < b) 
+                return -1; 
+            if (a > b) 
+                return 1;        
+        }
+
+/*
+        numeros.reverse();
+        document.write("<br/>");
+        document.write(numeros);
+*/
+/*       
+        var aux = 0;
+        for (var i=0; i < numeros.length-1; i++){
+            for(var j=1; j < numeros.length; j++) {
+                if (numeros[i] > numeros[j]){
+                    aux = numeros[i];
+                    numeros[i] = numeros[j];
+                    numeros[j] = aux;
+                }
+            }
+        }
+*/
+//        document.write("<br/>");
+//        document.write(numeros);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

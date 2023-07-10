@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faixa etária</title>
+    <script>
+        //Ler idade
+        var idade = Number(prompt("Informe idade"));
+
+        if (idade > 0 && idade <= 11) {
+            alert("Criança");
+        } else if (idade >= 12 && idade <= 17) {
+            alert("Adolescente");
+        } else if (idade >= 18 && idade <= 64){
+            alert("Adulto");
+        } else if (idade >= 65) {
+            alert("Idoso");
+        } else {
+            alert("Idade Inválida");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

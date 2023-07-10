@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var matriz = [];
+
+        matriz.push([101, 102, 103, 104]);
+        matriz.push([201, 202, 203, 204]);
+        matriz.push([301, 302, 303, 304]);
+
+        //Rodando apenas "os andares"
+        for (var contador = 0; contador < matriz.length; contador++){
+
+            document.write("<p> Elemento posição " + contador 
+                + " = " + matriz[contador] + "</p>");
+        }
+
+
+        //Rodando posição por posição 
+        for (var i = 0; i < matriz.length; i++){
+
+            for (var j = 0; j < matriz[i].length; j++ ){
+                document.write("<p> Elemento posição [" + i + ", " + j   
+                   +"] = " + matriz[i][j] + "</p>");
+            }
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

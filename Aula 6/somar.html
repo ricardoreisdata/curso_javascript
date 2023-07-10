@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var nome = "Pedro";
+
+        function somar(){
+            var n1 = Number(document.getElementById("numero1").value);
+            var n2 = Number(document.getElementById("numero2").value);
+
+            if (document.getElementById("numero1").value != ""){
+                var soma = n1 + n2;
+
+                //document.write("A soma é:" + soma);
+                document.getElementById("resultado").value = soma;
+                document.getElementById("resposta").textContent = soma;
+            } else {
+                alert("Preencha o primeiro valor");
+            }
+        }
+
+        alert(nome);
+        alert(n1);
+        alert(soma);
+    </script>
+</head>
+<body>
+    <form>
+        <label>Primeiro valor</label>
+        <input type="number" id="numero1" required="true" 
+            placeholder="Primeiro valor" />
+
+        <label>Segundo valor</label>
+        <input type="number" id="numero2" placeholder="Segundo valor" />
+
+        <input type="button" value="Calcular" onclick="somar()" />
+
+        <input type="number" id="resultado" disabled="true" />
+
+        <p id="resposta"></p>
+    </form>
+</body>
+</html>

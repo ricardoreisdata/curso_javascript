@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var banco = [];
+
+        banco.push(["Luis", 42, "luis@senac.com.br"]);
+        banco.push(["Maria", 25, "maria@teste.com"]);
+        banco.push(["Maurício", 30, "mauricio@teste.com", "RJ"]);
+
+        for (var i=0; i < banco.length; i++){
+            document.write("<p>" + banco[i] + "</p>");
+        }
+
+        //somatório das idades
+        var soma = 0;
+        for (var i=0; i < banco.length; i++){
+            soma += banco[i][1]; //soma = soma + banco[i][1];
+        }
+
+        alert(soma);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
